@@ -16,6 +16,7 @@
     height: 100vh;
     margin: 0;
     background-color: black;
+    overflow: hidden;
   }
   
   .container {
@@ -58,4 +59,3 @@
     cursor: pointer;
     font-family: 'mercy', sans-serif;
   }
-  
