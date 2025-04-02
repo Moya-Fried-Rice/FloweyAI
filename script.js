@@ -1,5 +1,5 @@
 let badCount = 0;
-let goodCount = 0;
+let goodCount = 1;
 let currentAudio = null;  // Variable to hold the current audio instance
 
 function startGame() {
@@ -43,7 +43,8 @@ function playIntroAnimation() {
         "assets/image/start/6.png",
         "assets/image/start/7.png",
         "assets/image/start/8.png",
-        "assets/image/start/9.png"
+        "assets/image/start/9.png",
+        "assets/image/positive/1.png",
     ];
     let index = 0;
     let startInterval = setInterval(() => {
@@ -86,7 +87,7 @@ function handleClick() {
                 index++;
     
                 // Random number of glitches to show before the next image
-                let numGlitches = Math.floor(Math.random() * 5) + 1; // Random number between 1 and 5
+                let numGlitches = Math.floor(Math.random() * 5) + 2; // Random number between 1 and 5
     
                 // Show glitches before moving to the next image
                 let glitchCount = 0;
@@ -192,3 +193,30 @@ function resetGame() {
 function startShaking(img) {
     img.classList.add("shake"); // Add the shake class to trigger the shaking animation
 }
+
+let typingAudio = new Audio("assets/audio/Keyboard.mp3");
+let isTyping = false;
+let typingTimeout;
+
+// Function to start playing the typing sound
+function handleTyping() {
+    // If it's not already playing, start playing the typing sound
+    if (!isTyping) {
+        typingAudio.play();
+        isTyping = true;
+    }
+
+    // Clear the previous timeout (if any)
+    clearTimeout(typingTimeout);
+
+    // Set a timeout to stop the audio if the user stops typing for 500ms
+    typingTimeout = setTimeout(() => {
+        typingAudio.pause();
+        typingAudio.currentTime = 0;  // Reset the audio to the beginning
+        isTyping = false;
+    }, 500); // 500ms delay after the last keystroke before stopping the audio
+}
+
+// Add event listener to the input field to handle typing
+document.getElementById("userInput").addEventListener("input", handleTyping);
+
