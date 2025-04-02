@@ -8,24 +8,19 @@
 </head>
 <body>
 
-<audio autoplay loop>
-  <source src="assets/audio/Your best friend.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <button id="beginButton" onclick="startGame()">BEGIN</button>
 
-      
-  <div class="container">
+  <div id="gameContainer" style="display: none;">
+    
+    <div class="container">
+      <img id="image" src="assets/image/start/1.png" alt="Animated Image" class="center-image" width="210" height="490">
+      <div style="color: white; font-size: 20px; margin-top: 15px;">Talk to Flowey...</div>
 
-    <img id="image" src="assets/image/1.png" alt="Animated Image" class="center-image" width="210" height="490" style="">
-
-    <!-- <img id="image" src="assets/image/2.gif" alt="Animated Image" class="center-image" width="200" height="490"> -->
-
-    <div style="color: white; font-size: 20px; margin-top: 15px;">Talk to Flowey...</div>
-
-<br>
-    <div class="input-group">
-      <input type="text" id="userInput" />
-      <button onclick="handleClick()">ACT</button>
+      <br>
+      <div class="input-group">
+        <input type="text" id="userInput" />
+        <button onclick="handleClick()">ACT</button>
+      </div>
     </div>
   </div>
 
