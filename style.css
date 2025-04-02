@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'PixelOperatorBold';
+    src: url('assets/font/PixelOperatorHB8.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'mercy';
+    src: url('assets/font/mercy.ttf') format('truetype');
+  }
+  
+  body {
+    font-family: 'PixelOperatorBold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .center-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 3px;
+    width: 200px;
+    font-size: 14px;
+    font-family: 'PixelOperatorBold', sans-serif;
+    border: 3px solid white; /* Thick black border */
+    background-color: black;
+    color: white;
+    outline: none;
+  }
+  
+  
+  button {
+    font-size: 16px;
+    border: 3px solid white; /* Thick black border */
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: 'mercy', sans-serif;
+  }
+  
